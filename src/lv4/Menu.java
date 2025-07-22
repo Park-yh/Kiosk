@@ -1,0 +1,34 @@
+package lv4;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Menu {
+    private String name; //
+    private List<MenuItem> menuItems; //
+
+    public Menu(String name) {
+        this.name = name;
+        this.menuItems = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void addMenuItem(MenuItem item) {
+        this.menuItems.add(item);
+    }
+
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
+    public void displayMenuItems() {
+        System.out.println("\n[ " + name.toUpperCase() + " MENU ]");
+        for (int i = 0; i < menuItems.size(); i++) {
+            System.out.println((i + 1) + ". " + menuItems.get(i).getFormattedString());
+        }
+        System.out.println("0. 뒤로가기");
+    }
+}

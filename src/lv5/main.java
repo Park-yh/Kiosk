@@ -1,10 +1,11 @@
-package lv4;
+package lv5;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class main {
     public static void main(String[] args) {
+        // Menu 객체들을 생성하고 MenuItem들 추가
         Menu burgersMenu = new Menu("Burgers");
         burgersMenu.addMenuItem(new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         burgersMenu.addMenuItem(new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
@@ -24,14 +25,15 @@ public class main {
         dessertsMenu.addMenuItem(new MenuItem("French Fries", 2.0, "감자튀김"));
         dessertsMenu.addMenuItem(new MenuItem("Chicken Nuggets", 2.5, "치킨너겟"));
 
-
-
+        // 메인 메뉴 리스트를 생성하여 Menu 객체들을 담음
         List<Menu> mainMenus = new ArrayList<>();
         mainMenus.add(burgersMenu);
         mainMenus.add(drinksMenu);
         mainMenus.add(dessertsMenu);
 
+        // Kiosk 객체를 생성하고 메인 메뉴 리스트를 전달
         Kiosk kiosk = new Kiosk(mainMenus);
+        // Kiosk의 start 메소드를 호출하여 프로그램 흐름을 시작
         kiosk.start();
     }
 }
